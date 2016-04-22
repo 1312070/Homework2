@@ -54,7 +54,7 @@ router.post('/', function(req, res) {
 		req.session.isLoggedIn = true;
 		req.session.user= email;
 		console.log('created user: %s', email);
-		return res.redirect('/messages');
+		return res.send(user);
 	});
 });
 

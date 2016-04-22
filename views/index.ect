@@ -35,7 +35,7 @@
  	  </div>
  	  <div class="form-group">
  	    <div class="col-sm-offset-2 col-sm-10">
- 	      <button type="submit" class="btn btn-default" onclick="LoadUser()" name="btnLogin">Login</button>
+ 	      <button type="button" class="btn btn-default" onclick="LoadUser()" name="btnLogin">Login</button>
  	    </div>
  	  </div>
  	  <div class="col-sm-offset-2 col-sm-10">
@@ -55,11 +55,14 @@
                "email" : email,
                "password" : password
           },
-          success : function (){
-              alert('success');
+          success : function (data){
+              alert('Dang nhap thanh cong!!!');
+              alert('WELCOME: ' + data.username);
+              window.location.assign("http://localhost:3000/messages")
           },
           error : function(){
-            alert('failure');
+            alert('Dang nhap khong thanh cong :(');
+            window.location.assign("http://localhost:3000/")
           }
         });
       }
